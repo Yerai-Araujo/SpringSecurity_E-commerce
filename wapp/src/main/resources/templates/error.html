@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: 1px solid #4cae4c;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-home {
+            background-color: #4285f4; /* Google blue */
+            border: 1px solid #357ae8;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Error page</h1>
+    
+    <div style="text-align: center; margin-top: 20px;">
+            <a th:href="@{/start}" class="btn btn-home">
+                Login
+            </a>
+        </div>
+</div>
+</body>
+</html>

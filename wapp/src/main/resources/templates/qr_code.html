@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Two-Factor Authentication</title>
+</head>
+<body>
+    <h2>Scan this QR Code with Google Authenticator</h2>
+    <p>Use Google Authenticator or a similar app to scan the QR code and enable 2FA.</p>
+
+    <!-- ✅ Display the QR Code -->
+    <img th:src="@{/qr_code_img(username=${username}, secretKey=${secretKey})}" alt="QR Code"/>
+
+    <h3>Enter the OTP Code</h3>
+    <form action="/verify_otp" method="post">
+        <label for="otp">OTP Code:</label>
+        <input type="number" id="otp" name="otp" required min="100000" max="999999" step="1" />
+        <button type="submit">Verify OTP</button>
+    </form>
+
+    <p th:if="${error}" style="color: red;">Invalid OTP. Try again.</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Fast Food Restaurant</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+
+  <body>
+    <h1>Design your fast food!</h1>
+    <img th:src="@{/images/Restaurant.jpg}"/>
+
+    <form method="POST" th:action="@{/design}" th:object="${invoice}">
+
+
+    <div class="grid">
+      <div class="ingredient-group">
+      <h3>Select your product:</h3>
+      <div th:each="product : ${productsList}">
+        <input th:field="*{product}" type="checkbox"
+               th:value="${product.id}"/>
+        <span th:text="${product.name}">PRODUCT</span><br/>
+      </div>
+      </div>
+
+	  <div class="ingredient-group">
+      <h3>Select your ingredient:</h3>
+      <div th:each="ingredient : ${ingredientsList}">
+        <input th:field="*{ingredient}" type="checkbox"
+               th:value="${ingredient.id}"/>
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      </div>
+      </div>
+
+
+      <div> 	
+      	<br/>
+
+      <button>Confirm Your Order</button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Fast Food Restaurant</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+  </head>
+
+  <body>
+
+    <form method="POST" th:action="@{/orders}" th:object="${invoice}">
+      <h1>Confirm your order</h1>
+
+      <img th:src="@{/images/Restaurant.jpg}"/>
+     
+      	
+      <h3>Total: </h3>
+	  <span th:text="${invoice.getProduct().getName()}">NAME</span>
+	  <span th:text="${invoice.getProduct().getPrice()}">PRICE</span>
+      <br/>
+	  
+	  <span th:text="${invoice.getIngredient().getName()}">NAME INGREDIENT</span>
+	  <span th:text="${invoice.getIngredient().getPrice()}">PRICE INGREDIENT</span>
+	  <br/>
+      <input type="submit" value="Pay Order"/>
+    </form>
+
+  </body>
+</html>

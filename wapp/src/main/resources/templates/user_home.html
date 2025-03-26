@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Home</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #3cd9e7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      background-color: #2299a4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: 1px solid #4cae4c;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-home {
+            background-color: #4285f4; /* Google blue */
+            border: 1px solid #357ae8;
+            margin-top: 10px;
+        }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome, User!</h1>
+  <p>This is the user home page. Explore and access your user-specific features.</p>
+  <div style="text-align: center; margin-top: 20px;">
+            <a th:href="@{/home}" class="btn btn-home">
+                Home
+            </a>
+        </div>
+</div>
+</body>
+</html>
